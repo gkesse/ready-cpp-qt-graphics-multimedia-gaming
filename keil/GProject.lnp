@@ -1,4 +1,4 @@
 ".\main.obj",
-".\GPort.obj" 
+".\GDelay.obj" 
 TO "GProject" 
 RAMSIZE(256) 

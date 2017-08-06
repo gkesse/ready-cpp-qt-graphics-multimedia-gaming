@@ -1,0 +1,48 @@
+C51 COMPILER V8.12   GDELAY                                                                08/07/2017 00:16:35 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE GDELAY
+OBJECT MODULE PLACED IN .\GDelay.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\src\manager\GDelay.c BROWSE DEBUG OBJECTEXTEND PRINT(.\GDelay.lst) OBJEC
+                    -T(.\GDelay.obj)
+
+line level    source
+
+   1          //===============================================
+   2          #include "GDelay.h"
+   3          #include "GConfig.h"
+   4          //===============================================
+   5          #define PRELOAD01 (65536 - (OSC_FREQ / (OSC_PER_INST * 1000)))
+   6          #define PRELOAD01H (PRELOAD01 / 256)
+   7          #define PRELOAD01L (PRELOAD01 % 256)
+   8          //===============================================
+   9          void GDelay_T0(uint ms) {
+  10   1          uint m_ms;
+  11   1          TMOD &= 0xF0;
+  12   1          TMOD |= 0x01; 
+  13   1          ET0 = 0;
+  14   1      
+  15   1          for(m_ms = 0; m_ms < ms; m_ms++) {
+  16   2              TH0 = PRELOAD01H;
+  17   2              TL0 = PRELOAD01L;
+  18   2              TF0 = 0; 
+  19   2              TR0 = 1; 
+  20   2              while(TF0 == 0);
+  21   2              TR0 = 0; 
+  22   2          }
+  23   1      }
+  24          //===============================================
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     41    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

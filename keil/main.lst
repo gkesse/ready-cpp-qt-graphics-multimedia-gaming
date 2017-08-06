@@ -1,4 +1,4 @@
-C51 COMPILER V8.12   MAIN                                                                  08/06/2017 00:19:29 PAGE 1   
+C51 COMPILER V8.12   MAIN                                                                  08/07/2017 00:16:34 PAGE 1   
 
 
 C51 COMPILER V8.12, COMPILATION OF MODULE MAIN
@@ -9,21 +9,20 @@ COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\src\main.c BROWSE DEBUG OBJECTEX
 line level    source
 
    1          //===============================================
-   2          #include "manager/GPort.h"
-   3          //===============================================
-   4          void main() {
-   5   1              while(1) {
-   6   2                  //GPort_Write_Data(0xAA);
-   7   2                  GPort_Write_Bit(3, 0);
-   8   2                  GPort_Write_Bit(7, GPort_Read_Bit(0));
-   9   2                  //GPort_Read_Data();
-  10   2          }
-  11   1      }
-  12          //===============================================
+   2          #include "manager/GDelay.h"
+   3          #include "manager/GConfig.h"
+   4          //===============================================
+   5          void main() {
+   6   1              while(1) {
+   7   2                      PIN7 = !PIN7;
+   8   2                      GDelay_T0(1000);
+   9   2          }
+  10   1      }
+  11          //===============================================
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     21    ----
+   CODE SIZE        =     11    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
