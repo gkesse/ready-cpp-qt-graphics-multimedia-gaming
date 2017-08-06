@@ -1,0 +1,57 @@
+C51 COMPILER V8.12   GPORT                                                                 08/06/2017 00:19:29 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE GPORT
+OBJECT MODULE PLACED IN .\GPort.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\src\manager\GPort.c BROWSE DEBUG OBJECTEXTEND PRINT(.\GPort.lst) OBJECT(
+                    -.\GPort.obj)
+
+line level    source
+
+   1          //===============================================
+   2          #include "GPort.h"
+   3          #include "GConfig.h"
+   4          //===============================================
+   5          void GPort_Write_Data(uchar d) {
+   6   1              PORT = d;
+   7   1      }
+   8          //===============================================
+   9          void GPort_Write_Bit(uchar pin, bit d) {
+  10   1              uchar m_pin = 1;
+  11   1              m_pin <<= pin;
+  12   1              if(d == true) {
+  13   2                      PORT |= m_pin;
+  14   2                      return;
+  15   2              }
+  16   1              m_pin = ~m_pin;
+  17   1              PORT &= m_pin;
+  18   1      }
+  19          //===============================================
+  20          uchar GPort_Read_Data() {
+  21   1              PORT = 0xFF;
+  22   1              return PORT;
+  23   1      }
+  24          //===============================================
+  25          bit GPort_Read_Bit(uchar pin) {
+  26   1              uchar m_pin = 1;
+  27   1              bit m_data;
+  28   1              m_pin <<= pin;
+  29   1              GPort_Write_Bit(m_pin, 1);
+  30   1              m_data = PORT & m_pin;
+  31   1              return m_data;
+  32   1      }
+  33          //===============================================
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     66    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       2
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

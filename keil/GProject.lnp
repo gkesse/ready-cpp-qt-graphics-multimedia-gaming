@@ -1,0 +1,4 @@
+".\main.obj",
+".\GPort.obj" 
+TO "GProject" 
+RAMSIZE(256) 

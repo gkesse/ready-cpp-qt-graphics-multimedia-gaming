@@ -1,0 +1,286 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\TiaGerard\Programs\ZairStudio\EmbeddedSystem\ReadyTTA\keil\GProject.uv2
+Project File Date:  08/05/2017
+
+<h2>Output:</h2>
+compiling main.c...
+..\src\main.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=16
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 0 Warning(s).
+compiling main.c...
+..\src\main.c(2): warning C318: can't open file 'GTypeDef.h'
+..\src\main.c - 0 Error(s), 1 Warning(s).
+compiling main.c...
+..\src\main.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=16
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=19
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\SRC\MANAGER/GPORT.H(5): error C141: syntax error near 'd', expected ')'
+..\SRC\MANAGER/GPORT.H(6): error C129: missing ';' before 'GPort_Read_Data'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0012H
+Program Size: data=9.0 xdata=0 code=20
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0012H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0015H
+Program Size: data=9.0 xdata=0 code=23
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0012H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0015H
+Program Size: data=9.0 xdata=0 code=23
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 4 Warning(s).
+compiling main.c...
+..\src\main.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0012H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0015H
+Program Size: data=9.0 xdata=0 code=23
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0012H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0015H
+Program Size: data=9.0 xdata=0 code=23
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _GPORT_WRITE_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0012H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  GPORT_READ_DATA
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0015H
+Program Size: data=9.0 xdata=0 code=23
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+Program Size: data=9.0 xdata=0 code=32
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+Program Size: data=9.0 xdata=0 code=34
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+Program Size: data=9.0 xdata=0 code=31
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+Program Size: data=9.0 xdata=0 code=31
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+..\SRC\MANAGER\GPORT.C(12): error C202: 'true': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GPORT_WRITE_BIT?GPORT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+Program Size: data=9.1 xdata=0 code=57
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GPORT_WRITE_DATA?GPORT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+Program Size: data=9.1 xdata=0 code=66
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GPORT_WRITE_DATA?GPORT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  GPORT_READ_BIT
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?GPORT_READ_BIT?BIT
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?GPORT_READ_BIT?BIT
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0025H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  GPORT_READ_BIT
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0027H
+Program Size: data=9.1 xdata=0 code=71
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+..\SRC\MANAGER\GPORT.C(29): error C141: syntax error near 'bit'
+..\SRC\MANAGER\GPORT.C(29): error C202: 'm_data': undefined identifier
+..\SRC\MANAGER\GPORT.C(30): error C202: 'm_data': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GPORT_WRITE_DATA?GPORT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+Program Size: data=9.2 xdata=0 code=102
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GPORT_WRITE_DATA?GPORT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+Program Size: data=9.2 xdata=0 code=102
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GPORT_WRITE_DATA?GPORT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+Program Size: data=9.2 xdata=0 code=102
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+compiling GPort.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GPORT_WRITE_DATA?GPORT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GPORT_READ_DATA?GPORT
+Program Size: data=9.2 xdata=0 code=102
+creating hex file from "GProject"...
+"GProject" - 0 Error(s), 2 Warning(s).
