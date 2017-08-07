@@ -15,6 +15,8 @@ sbit PIN5 = PORT^5;
 sbit PIN6 = PORT^6;
 sbit PIN7 = PORT^7;
 //===============================================
+#define OUTPUT P2
+//===============================================
 #define LED P1
 sbit LED0 = LED^0;
 sbit LED1 = LED^1;

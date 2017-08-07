@@ -1,12 +1,11 @@
 //===============================================
-#include "manager/GDelay.h"
-#include "manager/GWatchdog.h"
+#include "manager/GInterrupt.h"
+#include "manager/GLed.h"
 //===============================================
 void main() {
-	GWdog_Init();
-	while(1) {
-		GDelay_T0(1000);
-		GWdog_Feed();
-    }
+	GLed_Init();
+	GTimer1_Init();
+	GInterrupt_Start();
+	while(1);
 }
 //===============================================

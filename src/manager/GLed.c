@@ -2,21 +2,25 @@
 #include "GLed.h"
 #include "GConfig.h"
 //===============================================
-static bit m_flashState;
+static bit Flash_State;
+static int Flash_Time;
 //===============================================
 void GLed_Init() {
-	m_flashState = 0;
+	Flash_State = LED_OFF;
 	LED7 = LED_OFF;
+	Flash_Time = 0;
 }
 //===============================================
 void GLed_Flash() {
-	if(m_flashState == 0) {
-	  	m_flashState = 1;
+	if(++Flash_Time <= 1000) return;
+	Flash_Time = 0;
+	if(Flash_State == LED_OFF) {
+	  	Flash_State = LED_ON;
 		LED7 = LED_ON;
 
 	}
-	else if(m_flashState == 1) {
-	   	m_flashState = 0;
+	else if(Flash_State == LED_ON) {
+	   	Flash_State = LED_OFF;
 		LED7 = LED_OFF;
 	}
 }

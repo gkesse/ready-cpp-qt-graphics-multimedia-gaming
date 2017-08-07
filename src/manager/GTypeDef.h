@@ -18,5 +18,9 @@ typedef unsigned long ulong;
 #define WDOG_OFF (0)
 #define WDOG_ON (!WDOG_OFF)
 //===============================================
+#define INTERRUPT_TIMER_0 1
+#define INTERRUPT_TIMER_1 3
+#define INTERRUPT_TIMER_2 5
+//===============================================
 #endif
 //===============================================
