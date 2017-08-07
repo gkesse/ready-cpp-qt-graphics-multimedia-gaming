@@ -2,7 +2,8 @@
 #ifndef _GConfig_
 #define _GConfig_
 //===============================================
-#include <reg52.h>
+//#include <reg52.h>
+#include <at89s53.h>
 //===============================================
 #define PORT P1
 sbit PIN0 = PORT^0;
@@ -23,6 +24,9 @@ sbit LED4 = LED^4;
 sbit LED5 = LED^5;
 sbit LED6 = LED^6;
 sbit LED7 = LED^7;
+//===============================================
+#define WDOG P1
+sbit WDOG_PIN = WDOG^7;
 //===============================================
 #endif
 //===============================================

@@ -12,8 +12,11 @@ typedef unsigned long ulong;
 #define FALSE (0)
 #define TRUE (!FALSE)
 //===============================================
-#define LED_ON (0)
-#define LED_OFF (!LED_ON)
+#define LED_OFF (1)
+#define LED_ON (!LED_OFF)
+//===============================================
+#define WDOG_OFF (0)
+#define WDOG_ON (!WDOG_OFF)
 //===============================================
 #endif
 //===============================================

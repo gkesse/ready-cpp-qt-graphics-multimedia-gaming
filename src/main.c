@@ -1,12 +1,12 @@
 //===============================================
 #include "manager/GDelay.h"
-#include "manager/GLed.h"
+#include "manager/GWatchdog.h"
 //===============================================
 void main() {
-	GLed_Init();
+	GWdog_Init();
 	while(1) {
-		GLed_Flash();
-		GDelay_ms(1000);
+		GDelay_T0(1000);
+		GWdog_Feed();
     }
 }
 //===============================================

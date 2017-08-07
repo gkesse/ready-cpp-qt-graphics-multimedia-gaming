@@ -1,4 +1,4 @@
-C51 COMPILER V8.12   GLED                                                                  08/07/2017 11:15:24 PAGE 1   
+C51 COMPILER V8.12   GLED                                                                  08/07/2017 15:41:19 PAGE 1   
 
 
 C51 COMPILER V8.12, COMPILATION OF MODULE GLED
@@ -11,6 +11,7 @@ line level    source
    1          //===============================================
    2          #include "GLed.h"
    3          #include "GConfig.h"
+*** ERROR C141 IN LINE 28 OF ..\SRC\MANAGER\GCONFIG.H: syntax error near 'P1', expected '='
    4          //===============================================
    5          static bit m_flashState;
    6          //===============================================
@@ -32,16 +33,4 @@ line level    source
   22   1      }
   23          //===============================================
 
-
-MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     21    ----
-   CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
-   PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
-   IDATA SIZE       =   ----    ----
-   BIT SIZE         =      1    ----
-END OF MODULE INFORMATION.
-
-
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
