@@ -1,12 +1,11 @@
 //===============================================
-#ifndef _GDelay_
-#define _GDelay_
+#ifndef _GLed_
+#define _GLed_
 //===============================================
 #include "GTypeDef.h"
 //===============================================
-void GDelay_T0(uint ms);
-void GDelay_T1(uint ms);
-void GDelay_ms(uint ms);
+void GLed_Init();
+void GLed_Flash();
 //===============================================
 #endif
 //===============================================

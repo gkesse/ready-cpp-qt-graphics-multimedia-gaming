@@ -22,3 +22,27 @@ void GDelay_T0(uint ms) {
     }
 }
 //===============================================
+void GDelay_T1(uint ms) {
+    uint m_ms;
+    TMOD &= 0x0F;
+    TMOD |= 0x10; 
+    ET1 = 0;
+
+    for(m_ms = 0; m_ms < ms; m_ms++) {
+        TH1 = PRELOAD01H;
+        TL1 = PRELOAD01L;
+        TF1 = 0; 
+        TR1 = 1; 
+        while(TF1 == 0);
+        TR1 = 0; 
+    }
+}
+//===============================================
+void GDelay_ms(uint ms) {
+    uint m_msX;
+	uint m_msY;
+    for (m_msX = 0; m_msX < ms; m_msX++) {
+        for (m_msY = 0; m_msY < 123; m_msY++);
+    }
+}
+//===============================================

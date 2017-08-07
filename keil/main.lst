@@ -1,4 +1,4 @@
-C51 COMPILER V8.12   MAIN                                                                  08/07/2017 00:16:34 PAGE 1   
+C51 COMPILER V8.12   MAIN                                                                  08/07/2017 11:15:23 PAGE 1   
 
 
 C51 COMPILER V8.12, COMPILATION OF MODULE MAIN
@@ -10,19 +10,20 @@ line level    source
 
    1          //===============================================
    2          #include "manager/GDelay.h"
-   3          #include "manager/GConfig.h"
+   3          #include "manager/GLed.h"
    4          //===============================================
    5          void main() {
-   6   1              while(1) {
-   7   2                      PIN7 = !PIN7;
-   8   2                      GDelay_T0(1000);
-   9   2          }
-  10   1      }
-  11          //===============================================
+   6   1              GLed_Init();
+   7   1              while(1) {
+   8   2                      GLed_Flash();
+   9   2                      GDelay_ms(1000);
+  10   2          }
+  11   1      }
+  12          //===============================================
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     11    ----
+   CODE SIZE        =     15    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

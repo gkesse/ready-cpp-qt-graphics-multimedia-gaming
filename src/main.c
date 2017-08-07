@@ -1,11 +1,12 @@
 //===============================================
 #include "manager/GDelay.h"
-#include "manager/GConfig.h"
+#include "manager/GLed.h"
 //===============================================
 void main() {
+	GLed_Init();
 	while(1) {
-		PIN7 = !PIN7;
-		GDelay_T0(1000);
+		GLed_Flash();
+		GDelay_ms(1000);
     }
 }
 //===============================================

@@ -1,0 +1,47 @@
+C51 COMPILER V8.12   GLED                                                                  08/07/2017 11:15:24 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE GLED
+OBJECT MODULE PLACED IN .\GLed.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\src\manager\GLed.c BROWSE DEBUG OBJECTEXTEND PRINT(.\GLed.lst) OBJECT(.\
+                    -GLed.obj)
+
+line level    source
+
+   1          //===============================================
+   2          #include "GLed.h"
+   3          #include "GConfig.h"
+   4          //===============================================
+   5          static bit m_flashState;
+   6          //===============================================
+   7          void GLed_Init() {
+   8   1              m_flashState = 0;
+   9   1              LED7 = LED_OFF;
+  10   1      }
+  11          //===============================================
+  12          void GLed_Flash() {
+  13   1              if(m_flashState == 0) {
+  14   2                      m_flashState = 1;
+  15   2                      LED7 = LED_ON;
+  16   2      
+  17   2              }
+  18   1              else if(m_flashState == 1) {
+  19   2                      m_flashState = 0;
+  20   2                      LED7 = LED_OFF;
+  21   2              }
+  22   1      }
+  23          //===============================================
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     21    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

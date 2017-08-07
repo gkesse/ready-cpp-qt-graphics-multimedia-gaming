@@ -1,4 +1,5 @@
 ".\main.obj",
-".\GDelay.obj" 
+".\GDelay.obj",
+".\GLed.obj" 
 TO "GProject" 
 RAMSIZE(256) 
