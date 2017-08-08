@@ -1,8 +1,8 @@
-BL51 BANKED LINKER/LOCATER V6.11                                                        08/07/2017  23:42:14  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.11                                                        08/08/2017  10:45:11  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.11, INVOKED BY:
-C:\KEIL\C51\BIN\BL51.EXE .\main.obj, .\GLed.obj, .\GInterrupt.obj TO GProject RAMSIZE (256)
+C:\KEIL\C51\BIN\BL51.EXE .\main.obj, .\GUart.obj TO GProject RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL
@@ -10,9 +10,17 @@ MEMORY MODEL: SMALL
 
 INPUT MODULES INCLUDED:
   .\main.obj (MAIN)
-  .\GLed.obj (GLED)
-  .\GInterrupt.obj (GINTERRUPT)
+  .\GUart.obj (GUART)
   C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?LMUL)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ULDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
 
 
 LINK MAP OF MODULE:  GProject (MAIN)
@@ -23,72 +31,43 @@ LINK MAP OF MODULE:  GProject (MAIN)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     0002H     UNIT         ?DT?GLED
-                    000AH     0016H                  *** GAP ***
-            BIT     0020H.0   0000H.1   UNIT         ?BI?GLED
-                    0020H.1   0000H.7                *** GAP ***
-            IDATA   0021H     0001H     UNIT         ?STACK
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+                    001CH     0004H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            IDATA   0022H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0003H     UNIT         ?PR?GINTERRUPT_START?GINTERRUPT
-                    0006H     0005H                  *** GAP ***
-            CODE    000BH     0003H     ABSOLUTE     
-            CODE    000EH     000CH     UNIT         ?PR?GTIMER0_INIT?GINTERRUPT
-                    001AH     0001H                  *** GAP ***
-            CODE    001BH     0003H     ABSOLUTE     
-            CODE    001EH     000CH     UNIT         ?PR?GTIMER1_INIT?GINTERRUPT
-                    002AH     0001H                  *** GAP ***
-            CODE    002BH     0003H     ABSOLUTE     
-            CODE    002EH     003EH     UNIT         ?PR?GINTERRUPT_TIMER_0?GINTERRUPT
-            CODE    006CH     003EH     UNIT         ?PR?GINTERRUPT_TIMER_1?GINTERRUPT
-            CODE    00AAH     003DH     UNIT         ?PR?GINTERRUPT_TIMER_2?GINTERRUPT
-            CODE    00E7H     0028H     UNIT         ?PR?GLED_FLASH?GLED
-            CODE    010FH     0014H     UNIT         ?PR?GTIMER2_INIT?GINTERRUPT
-            CODE    0123H     000CH     UNIT         ?C_C51STARTUP
-            CODE    012FH     000BH     UNIT         ?PR?MAIN?MAIN
-            CODE    013AH     000BH     UNIT         ?PR?GTIMER0_RELOAD?GINTERRUPT
-            CODE    0145H     000BH     UNIT         ?PR?GTIMER1_RELOAD?GINTERRUPT
-            CODE    0150H     000AH     UNIT         ?PR?GLED_INIT?GLED
+            CODE    0003H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    035FH     01ABH     UNIT         ?C?LIB_CODE
+            CODE    050AH     0034H     UNIT         ?PR?_GUART_INIT?GUART
+            CODE    053EH     002DH     UNIT         ?PR?MAIN?MAIN
+            CODE    056BH     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    0592H     000EH     UNIT         ?CO?MAIN
+            CODE    05A0H     000CH     UNIT         ?C_C51STARTUP
 
 
 
 OVERLAY MAP OF MODULE:   GProject (MAIN)
 
 
-SEGMENT
-  +--> CALLED SEGMENT
----------------------
-BL51 BANKED LINKER/LOCATER V6.11                                                      08/07/2017  23:42:14  PAGE 2
-
-
-?PR?GINTERRUPT_TIMER_0?GINTERRUPT
-  +--> ?PR?GTIMER0_RELOAD?GINTERRUPT
-  +--> ?PR?GLED_FLASH?GLED
-
-*** NEW ROOT ***************************************************
-
-?PR?GINTERRUPT_TIMER_1?GINTERRUPT
-  +--> ?PR?GTIMER1_RELOAD?GINTERRUPT
-  +--> ?PR?GLED_FLASH?GLED
-
-*** NEW ROOT ***************************************************
-
-?PR?GINTERRUPT_TIMER_2?GINTERRUPT
-  +--> ?PR?GLED_FLASH?GLED
-
-*** NEW ROOT ***************************************************
-
-?C_C51STARTUP
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?C_C51STARTUP                  -----    -----      -----    -----
   +--> ?PR?MAIN?MAIN
 
-?PR?MAIN?MAIN
-  +--> ?PR?GLED_INIT?GLED
-  +--> ?PR?GTIMER1_INIT?GINTERRUPT
-  +--> ?PR?GINTERRUPT_START?GINTERRUPT
+?PR?MAIN?MAIN                  -----    -----      -----    -----
+BL51 BANKED LINKER/LOCATER V6.11                                                      08/08/2017  10:45:11  PAGE 2
 
-?PR?GTIMER1_INIT?GINTERRUPT
-  +--> ?PR?GTIMER1_RELOAD?GINTERRUPT
+
+  +--> ?PR?_GUART_INIT?GUART
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0008H    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
 
 
 
@@ -99,159 +78,91 @@ SYMBOL TABLE OF MODULE:  GProject (MAIN)
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:012FH         PUBLIC        main
+  C:053EH         PUBLIC        main
   -------         PROC          MAIN
-  C:012FH         LINE#         5
-  C:012FH         LINE#         6
-  C:0132H         LINE#         7
-  C:0135H         LINE#         8
-  C:0138H         LINE#         9
+  C:053EH         LINE#         4
+  C:053EH         LINE#         5
+  C:0545H         LINE#         6
+  C:054EH         LINE#         7
+  C:0557H         LINE#         8
+  C:0560H         LINE#         9
+  C:0569H         LINE#         10
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
-  -------         MODULE        GLED
+  -------         MODULE        GUART
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
-  B:0090H.7       PUBLIC        LED7
-  C:00E7H         PUBLIC        GLed_Flash
-  C:0150H         PUBLIC        GLed_Init
-  B:0020H.0       SYMBOL        Flash_State
-  D:0008H         SYMBOL        Flash_Time
-  -------         PROC          GLED_INIT
-  C:0150H         LINE#         8
-BL51 BANKED LINKER/LOCATER V6.11                                                      08/07/2017  23:42:14  PAGE 3
-
-
-  C:0150H         LINE#         9
-  C:0152H         LINE#         10
-  C:0154H         LINE#         11
-  C:0159H         LINE#         12
-  -------         ENDPROC       GLED_INIT
-  -------         PROC          GLED_FLASH
-  C:00E7H         LINE#         14
-  C:00E7H         LINE#         15
-  C:00FAH         LINE#         16
-  C:00FFH         LINE#         17
-  C:0102H         LINE#         18
-  C:0104H         LINE#         19
-  C:0106H         LINE#         21
-  C:0107H         LINE#         22
-  C:010AH         LINE#         23
-  C:010CH         LINE#         24
-  C:010EH         LINE#         25
-  C:010EH         LINE#         26
-  -------         ENDPROC       GLED_FLASH
-  -------         ENDMOD        GLED
-
-  -------         MODULE        GINTERRUPT
-  C:0000H         SYMBOL        _ICE_DUMMY_
-  D:0090H         PUBLIC        P1
-  B:00A8H.7       PUBLIC        EA
-  C:0003H         PUBLIC        GInterrupt_Start
-  C:002EH         PUBLIC        GInterrupt_Timer_0
-  C:006CH         PUBLIC        GInterrupt_Timer_1
-  C:00AAH         PUBLIC        GInterrupt_Timer_2
-  D:00CBH         PUBLIC        RCAP2H
-  D:00CAH         PUBLIC        RCAP2L
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.1       PUBLIC        TI
+  D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
-  C:013AH         PUBLIC        GTimer0_Reload
-  C:0145H         PUBLIC        GTimer1_Reload
-  B:00A8H.1       PUBLIC        ET0
-  B:00A8H.3       PUBLIC        ET1
-  B:00A8H.5       PUBLIC        ET2
-  B:00C8H.7       PUBLIC        TF2
-  D:008CH         PUBLIC        TH0
   D:008DH         PUBLIC        TH1
-  D:00CDH         PUBLIC        TH2
-  D:008AH         PUBLIC        TL0
-  D:008BH         PUBLIC        TL1
-  D:00CCH         PUBLIC        TL2
-  B:0088H.4       PUBLIC        TR0
   B:0088H.6       PUBLIC        TR1
-  B:00C8H.2       PUBLIC        TR2
-  D:00C8H         PUBLIC        T2CON
-  C:000EH         PUBLIC        GTimer0_Init
-  C:001EH         PUBLIC        GTimer1_Init
-  C:010FH         PUBLIC        GTimer2_Init
-  -------         PROC          GINTERRUPT_START
-  C:0003H         LINE#         10
-  C:0003H         LINE#         11
-  C:0005H         LINE#         12
-  -------         ENDPROC       GINTERRUPT_START
-  -------         PROC          GTIMER0_RELOAD
-BL51 BANKED LINKER/LOCATER V6.11                                                      08/07/2017  23:42:14  PAGE 4
+  C:050AH         PUBLIC        _GUart_Init
+  -------         PROC          _GUART_INIT
+  D:0006H         SYMBOL        baud
+  -------         DO            
+  D:0006H         SYMBOL        m_PRELOAD
+  -------         ENDDO         
+  C:050AH         LINE#         5
+  C:050AH         LINE#         6
+  C:052DH         LINE#         8
+  C:0530H         LINE#         9
+  C:0533H         LINE#         10
+  C:0535H         LINE#         11
+  C:0537H         LINE#         12
+  C:0539H         LINE#         13
+  C:053BH         LINE#         14
+  C:053DH         LINE#         15
+  -------         ENDPROC       _GUART_INIT
+  -------         ENDMOD        GUART
+
+  -------         MODULE        ?C?LMUL
+BL51 BANKED LINKER/LOCATER V6.11                                                      08/08/2017  10:45:11  PAGE 3
 
 
-  C:013AH         LINE#         14
-  C:013AH         LINE#         15
-  C:013CH         LINE#         16
-  C:013FH         LINE#         17
-  C:0142H         LINE#         18
-  C:0144H         LINE#         19
-  -------         ENDPROC       GTIMER0_RELOAD
-  -------         PROC          GTIMER1_RELOAD
-  C:0145H         LINE#         21
-  C:0145H         LINE#         22
-  C:0147H         LINE#         23
-  C:014AH         LINE#         24
-  C:014DH         LINE#         25
-  C:014FH         LINE#         26
-  -------         ENDPROC       GTIMER1_RELOAD
-  -------         PROC          GTIMER0_INIT
-  C:000EH         LINE#         28
-  C:000EH         LINE#         29
-  C:0011H         LINE#         30
-  C:0014H         LINE#         31
-  C:0017H         LINE#         32
-  C:0019H         LINE#         33
-  -------         ENDPROC       GTIMER0_INIT
-  -------         PROC          GTIMER1_INIT
-  C:001EH         LINE#         35
-  C:001EH         LINE#         36
-  C:0021H         LINE#         37
-  C:0024H         LINE#         38
-  C:0027H         LINE#         39
-  C:0029H         LINE#         40
-  -------         ENDPROC       GTIMER1_INIT
-  -------         PROC          GTIMER2_INIT
-  C:010FH         LINE#         42
-  C:010FH         LINE#         43
-  C:0112H         LINE#         44
-  C:0115H         LINE#         45
-  C:0118H         LINE#         46
-  C:011BH         LINE#         47
-  C:011EH         LINE#         48
-  C:0120H         LINE#         49
-  C:0122H         LINE#         50
-  -------         ENDPROC       GTIMER2_INIT
-  -------         PROC          GINTERRUPT_TIMER_0
-  C:002EH         LINE#         52
-  C:004BH         LINE#         53
-  C:004EH         LINE#         54
-  C:0051H         LINE#         55
-  -------         ENDPROC       GINTERRUPT_TIMER_0
-  -------         PROC          GINTERRUPT_TIMER_1
-  C:006CH         LINE#         57
-  C:0089H         LINE#         58
-  C:008CH         LINE#         59
-  C:008FH         LINE#         60
-  -------         ENDPROC       GINTERRUPT_TIMER_1
-  -------         PROC          GINTERRUPT_TIMER_2
-  C:00AAH         LINE#         62
-  C:00C7H         LINE#         63
-BL51 BANKED LINKER/LOCATER V6.11                                                      08/07/2017  23:42:14  PAGE 5
+  C:035FH         PUBLIC        ?C?LMUL
+  -------         ENDMOD        ?C?LMUL
 
+  -------         MODULE        ?C?ULDIV
+  C:03EAH         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
 
-  C:00C9H         LINE#         64
-  C:00CCH         LINE#         65
-  -------         ENDPROC       GINTERRUPT_TIMER_2
-  -------         ENDMOD        GINTERRUPT
+  -------         MODULE        PRINTF
+  D:0008H         PUBLIC        ?_PRINTF517?BYTE
+  D:0008H         PUBLIC        ?_PRINTF?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF?BYTE
+  C:0065H         PUBLIC        _PRINTF
+  C:0065H         PUBLIC        _PRINTF517
+  C:005FH         PUBLIC        _SPRINTF
+  C:005FH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?GTIMER0_INIT?GINTERRUPT
+  -------         MODULE        ?C?CLDPTR
+  C:047CH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?GTIMER2_INIT?GINTERRUPT
+  -------         MODULE        ?C?CLDOPTR
+  C:0495H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
 
-Program Size: data=11.1 xdata=0 code=339
-LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
+  -------         MODULE        ?C?CSTPTR
+  C:04C2H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:04D4H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:04E4H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:056BH         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+Program Size: data=30.1 xdata=0 code=1452
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

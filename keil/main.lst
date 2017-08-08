@@ -1,4 +1,4 @@
-C51 COMPILER V8.12   MAIN                                                                  08/07/2017 23:42:12 PAGE 1   
+C51 COMPILER V8.12   MAIN                                                                  08/08/2017 10:45:10 PAGE 1   
 
 
 C51 COMPILER V8.12, COMPILATION OF MODULE MAIN
@@ -9,21 +9,22 @@ COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\src\main.c BROWSE DEBUG OBJECTEX
 line level    source
 
    1          //===============================================
-   2          #include "manager/GInterrupt.h"
-   3          #include "manager/GLed.h"
-   4          //===============================================
-   5          void main() {
-   6   1              GLed_Init();
-   7   1              GTimer1_Init();
-   8   1              GInterrupt_Start();
-   9   1              while(1);
-  10   1      }
-  11          //===============================================
+   2          #include "manager/GUart.h"
+   3          //===============================================
+   4          void main() {
+   5   1              GUart_Init(9600);
+   6   1              printf("Hello World!\n");
+   7   1              printf("Hello World!\n");
+   8   1              printf("Hello World!\n");
+   9   1              printf("Hello World!\n");
+  10   1              while(1);
+  11   1      }
+  12          //===============================================
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     11    ----
-   CONSTANT SIZE    =   ----    ----
+   CODE SIZE        =     45    ----
+   CONSTANT SIZE    =     14    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----

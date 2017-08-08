@@ -1,0 +1,40 @@
+C51 COMPILER V8.12   GUART                                                                 08/08/2017 10:45:11 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE GUART
+OBJECT MODULE PLACED IN .\GUart.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\src\manager\GUart.c BROWSE DEBUG OBJECTEXTEND PRINT(.\GUart.lst) OBJECT(
+                    -.\GUart.obj)
+
+line level    source
+
+   1          //===============================================
+   2          #include "GUart.h"
+   3          #include "GConfig.h"
+   4          //===============================================
+   5          void GUart_Init(uint baud) {
+   6   1              uint m_PRELOAD = (256 - (uchar)((((ulong)OSC_FREQ / 100) * 3125) 
+   7   1              / ((ulong)baud * OSC_PER_INST * 1000)));
+   8   1              SCON = 0x50;          
+   9   1              TMOD |= 0x20;                             
+  10   1              TH1   = m_PRELOAD;          
+  11   1              TH1   = m_PRELOAD;          
+  12   1              TI    = 1;  
+  13   1              ES = 0;          
+  14   1              TR1   = 1;             
+  15   1      }
+  16          //===============================================
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     52    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
