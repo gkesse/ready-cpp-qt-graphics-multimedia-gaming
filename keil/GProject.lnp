@@ -1,5 +1,0 @@
-".\main.obj",
-".\GSch.obj",
-".\GLed.obj" 
-TO "GProject" 
-RAMSIZE(256) 
