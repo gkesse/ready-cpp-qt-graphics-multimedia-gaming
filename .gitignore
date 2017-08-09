@@ -5,6 +5,9 @@
 keil/*lst
 keil/*obj
 keil/*M51
+keil/*plg
+keil/*lnp
+keil/GProject
 
 #================================================
 # Proteus
