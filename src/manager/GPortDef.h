@@ -1,6 +1,6 @@
 //===============================================
-#ifndef _GConfig_
-#define _GConfig_
+#ifndef _GPortDef_
+#define _GPortDef_
 //===============================================
 //#include <reg52.h>
 #include <at89s53.h>

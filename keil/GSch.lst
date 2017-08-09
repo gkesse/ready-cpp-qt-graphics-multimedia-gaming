@@ -1,4 +1,4 @@
-C51 COMPILER V8.12   GSCH                                                                  08/09/2017 17:25:33 PAGE 1   
+C51 COMPILER V8.12   GSCH                                                                  08/09/2017 18:46:43 PAGE 1   
 
 
 C51 COMPILER V8.12, COMPILATION OF MODULE GSCH
@@ -12,7 +12,7 @@ line level    source
    2          #include "GSch.h"
    3          #include "GPortDef.h"
    4          //===============================================
-   5          #define PRELOAD01 (65536 - ((OSC_FREQ * 2) / (OSC_PER_INST * 1000))) // ms
+   5          #define PRELOAD01 (65536 - ((OSC_FREQ * 1) / (OSC_PER_INST * 1000))) // ms
    6          #define PRELOAD01H (PRELOAD01 / 256)
    7          #define PRELOAD01L (PRELOAD01 % 256)
    8          //===============================================
@@ -62,7 +62,7 @@ line level    source
   52          void GSch_Add_Task(void (*pTask)(), const uint delay, const uint period) {
   53   1              uchar index = 0;
   54   1              while((Sch_Tasks_Map[index].pTask != 0) && (index < SCH_MAX_TASKS)) index++;
-C51 COMPILER V8.12   GSCH                                                                  08/09/2017 17:25:33 PAGE 2   
+C51 COMPILER V8.12   GSCH                                                                  08/09/2017 18:46:43 PAGE 2   
 
   55   1              if(index == SCH_MAX_TASKS) return;
   56   1              Sch_Tasks_Map[index].pTask = pTask;
