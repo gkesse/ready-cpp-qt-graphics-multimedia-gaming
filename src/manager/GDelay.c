@@ -1,8 +1,8 @@
 //===============================================
 #include "GDelay.h"
-#include "GConfig.h"
+#include "GPortDef.h"
 //===============================================
-#define PRELOAD01 (65536 - (OSC_FREQ / (OSC_PER_INST * 1000)))
+#define PRELOAD01 (65536 - ((OSC_FREQ * 1) / (OSC_PER_INST * 1000))) // ms
 #define PRELOAD01H (PRELOAD01 / 256)
 #define PRELOAD01L (PRELOAD01 % 256)
 //===============================================
@@ -39,10 +39,10 @@ void GDelay_T1(uint ms) {
 }
 //===============================================
 void GDelay_ms(uint ms) {
-    uint m_msX;
+	uint m_msX;
 	uint m_msY;
-    for (m_msX = 0; m_msX < ms; m_msX++) {
-        for (m_msY = 0; m_msY < 123; m_msY++);
-    }
+	for (m_msX = 0; m_msX < ms; m_msX++) {
+	    for (m_msY = 0; m_msY < 123; m_msY++);
+	}
 }
 //===============================================

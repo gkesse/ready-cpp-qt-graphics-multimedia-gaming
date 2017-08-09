@@ -1,6 +1,6 @@
 //===============================================
 #include "GWatchdog.h"
-#include "GConfig.h"
+#include "GPortDef.h"
 //===============================================
 void GWdog_Init() {
 	// WDTCON = PS2 ; PS1 ; PS0 ; WDIDLE ; DISRTO ; HWDT ; WDTRST ; WDTEN

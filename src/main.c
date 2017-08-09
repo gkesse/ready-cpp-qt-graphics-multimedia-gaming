@@ -1,12 +1,14 @@
 //===============================================
-#include "manager/GUart.h"
+#include "manager/GSch.h"
+#include "manager/GLed.h"
 //===============================================
 void main() {
-	GUart_Init(9600);
-	printf("Hello World!\n");
-	printf("Hello World!\n");
-	printf("Hello World!\n");
-	printf("Hello World!\n");
-	while(1);
+	GSch_Init();
+	GLed_Init();
+	GSch_Add_Task(GLed_Flash, 0, 1000);
+	GSch_Start();
+	while(1) {
+		GSch_Dispatch_Tasks();
+	}
 }
 //===============================================

@@ -1,4 +1,4 @@
-C51 COMPILER V8.12   GLED                                                                  08/07/2017 23:42:13 PAGE 1   
+C51 COMPILER V8.12   GLED                                                                  08/09/2017 17:25:33 PAGE 1   
 
 
 C51 COMPILER V8.12, COMPILATION OF MODULE GLED
@@ -10,39 +10,35 @@ line level    source
 
    1          //===============================================
    2          #include "GLed.h"
-   3          #include "GConfig.h"
+   3          #include "GPortDef.h"
    4          //===============================================
    5          static bit Flash_State;
-   6          static int Flash_Time;
-   7          //===============================================
-   8          void GLed_Init() {
-   9   1              Flash_State = LED_OFF;
-  10   1              LED7 = LED_OFF;
-  11   1              Flash_Time = 0;
-  12   1      }
-  13          //===============================================
-  14          void GLed_Flash() {
-  15   1              if(++Flash_Time <= 1000) return;
-  16   1              Flash_Time = 0;
-  17   1              if(Flash_State == LED_OFF) {
-  18   2                      Flash_State = LED_ON;
-  19   2                      LED7 = LED_ON;
-  20   2      
+   6          //===============================================
+   7          void GLed_Init() {
+   8   1              Flash_State = LED_OFF;
+   9   1              LED7 = LED_OFF;
+  10   1      }
+  11          //===============================================
+  12          void GLed_Flash() {
+  13   1              if(Flash_State == LED_OFF) {
+  14   2                      Flash_State = LED_ON;
+  15   2                      LED7 = LED_ON;
+  16   2      
+  17   2              }
+  18   1              else if(Flash_State == LED_ON) {
+  19   2                      Flash_State = LED_OFF;
+  20   2                      LED7 = LED_OFF;
   21   2              }
-  22   1              else if(Flash_State == LED_ON) {
-  23   2                      Flash_State = LED_OFF;
-  24   2                      LED7 = LED_OFF;
-  25   2              }
-  26   1      }
-  27          //===============================================
+  22   1      }
+  23          //===============================================
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     50    ----
+   CODE SIZE        =     21    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      2    ----
+   DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =      1    ----
 END OF MODULE INFORMATION.

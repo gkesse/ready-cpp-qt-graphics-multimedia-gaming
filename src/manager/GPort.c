@@ -1,6 +1,6 @@
 //===============================================
 #include "GPort.h"
-#include "GConfig.h"
+#include "GPortDef.h"
 //===============================================
 void GPort_Write_Data(uchar d) {
 	PORT = d;

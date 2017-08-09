@@ -7,7 +7,6 @@ typedef unsigned int uint;
 typedef unsigned long ulong;
 //===============================================
 #define OSC_FREQ (11059200)
-//#define OSC_FREQ (12000000)
 #define OSC_PER_INST (12)
 //===============================================
 #define FALSE (0)

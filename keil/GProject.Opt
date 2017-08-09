@@ -13,13 +13,12 @@
 Target (Target 1), 0x0000 // Tools: 'MCS-51'
 GRPOPT 1,(Source Group 1),1,0,0
 
-OPTFFF 1,1,1,251658241,0,1,5,0,<..\src\main.c><main.c> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,248,255,255,255,225,255,255,255,78,0,0,0,78,0,0,0,39,4,0,0,119,1,0,0 }
-OPTFFF 1,2,1,352321537,0,2,5,0,<..\src\manager\GUart.c><GUart.c> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,248,255,255,255,225,255,255,255,104,0,0,0,104,0,0,0,65,4,0,0,145,1,0,0 }
+OPTFFF 1,1,1,234881025,0,0,0,0,<..\src\main.c><main.c> 
+OPTFFF 1,2,1,301989889,0,0,0,0,<..\src\manager\GUart.c><GUart.c> 
 
-ExtF <C:\Users\TiaGerard\Programs\ZairStudio\EmbeddedSystem\ReadyTTA\src\manager\GUart.h> 1,8,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,104,0,0,0,104,0,0,0,61,4,0,0,141,1,0,0 }
-ExtF <C:\USERS\TIAGERARD\PROGRAMS\ZAIRSTUDIO\EMBEDDEDSYSTEM\READYTTA\SRC\MANAGER\GTYPEDEF.H> 1,13,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,130,0,0,0,130,0,0,0,87,4,0,0,167,1,0,0 }
-ExtF <C:\Users\TiaGerard\Programs\ZairStudio\EmbeddedSystem\ReadyTTA\SRC\MANAGER\GCONFIG.H> 22,31,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,0,0,0,0,0,0,0,213,3,0,0,37,1,0,0 }
-ExtF <C:\Users\TiaGerard\Programs\ZairStudio\EmbeddedSystem\ReadyTTA\src\manager\GInterrupt.c> 42,42,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,248,255,255,255,225,255,255,255,104,0,0,0,104,0,0,0,65,4,0,0,145,1,0,0 }
+ExtF <C:\Users\TiaGerard\Programs\ZairStudio\EmbeddedSystem\ReadyTTA\src\manager\GSch.c> 1,5,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,248,255,255,255,225,255,255,255,104,0,0,0,104,0,0,0,65,4,0,0,145,1,0,0 }
+ExtF <C:\Users\TiaGerard\Programs\ZairStudio\EmbeddedSystem\ReadyTTA\src\manager\GSch.h> 1,11,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,248,255,255,255,225,255,255,255,0,0,0,0,0,0,0,0,217,3,0,0,41,1,0,0 }
+ExtF <C:\Users\TiaGerard\Programs\ZairStudio\EmbeddedSystem\ReadyTTA\src\manager\GInterrupt.c> 1,1,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,248,255,255,255,225,255,255,255,26,0,0,0,26,0,0,0,243,3,0,0,67,1,0,0 }
 
 TARGOPT 1, (Target 1)
  CLK51=24000000

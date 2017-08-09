@@ -1,4 +1,5 @@
 ".\main.obj",
-".\GUart.obj" 
+".\GSch.obj",
+".\GLed.obj" 
 TO "GProject" 
 RAMSIZE(256) 

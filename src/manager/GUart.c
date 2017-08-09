@@ -1,6 +1,6 @@
 //===============================================
 #include "GUart.h"
-#include "GConfig.h"
+#include "GPortDef.h"
 //===============================================
 void GUart_Init(uint baud) {
 	uint m_PRELOAD = (256 - (uchar)((((ulong)OSC_FREQ / 100) * 3125) 
