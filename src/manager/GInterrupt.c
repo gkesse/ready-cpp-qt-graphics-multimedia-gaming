@@ -1,6 +1,5 @@
 //===============================================
 #include "GInterrupt.h"
-#include "GPortDef.h"
 #include "GLed.h"
 //===============================================
 #define PRELOAD01 (65536 - ((OSC_FREQ * 1) / (OSC_PER_INST * 1000))) // ms

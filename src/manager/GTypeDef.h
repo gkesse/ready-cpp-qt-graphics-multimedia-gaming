@@ -16,7 +16,7 @@ typedef unsigned long ulong;
 #define TRUE (!FALSE)
 //===============================================
 #define LOCKED (1)
-#define UNLOCKED (!SCH_LOCKED)
+#define UNLOCKED (!LOCKED)
 //===============================================
 #define LED_OFF (1)
 #define LED_ON (!LED_OFF)

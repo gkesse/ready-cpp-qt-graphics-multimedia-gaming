@@ -6,7 +6,7 @@ void main() {
 	GSch_Init();
 	GLed_Init();
 	GSch_Add_Task(GLed_Short, 0, 1000, 0);
-	GSch_Add_Task(GLed_Long, 1, 10000, 1);
+	GSch_Add_Task(GLed_Long, 2000, 20000, 0);
 	GSch_Start();
 	while(1) {
 		GSch_Dispatch_Tasks();

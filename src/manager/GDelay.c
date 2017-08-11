@@ -1,6 +1,5 @@
 //===============================================
 #include "GDelay.h"
-#include "GPortDef.h"
 //===============================================
 #define PRELOAD01 (65536 - ((OSC_FREQ * 1) / (OSC_PER_INST * 1000))) // ms
 #define PRELOAD01H (PRELOAD01 / 256)
