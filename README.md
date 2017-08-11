@@ -20,7 +20,7 @@ sur plusieurs cibles de microcontrôleurs (8051, PIC) et de microprocesseurs (ARM
 C'est une bibliothèque développée en C et maintenu par 
 [Gerard KESSE](http://31.33.37.71:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
-# Ordonnanceur Hybride
+# Ordonnancement Hybride
 
 ```
 //===============================================

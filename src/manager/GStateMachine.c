@@ -32,6 +32,16 @@ void GState_Light_L1() {
 			LIGHT_AMBER_L1 = LIGHT_OFF;
 			LIGHT_GREEN_L1 = LIGHT_OFF;
 			if(++Light_Time_L1 >= LIGHT_RED_AMBER_DURATION) {
+				Light_State_L1 = RED_RED_1;
+				Light_Time_L1 = 0;	
+			} 
+			break;
+		}
+		case RED_RED_1: {
+			LIGHT_RED_L1 = LIGHT_ON;
+			LIGHT_AMBER_L1 = LIGHT_OFF;
+			LIGHT_GREEN_L1 = LIGHT_OFF;
+			if(++Light_Time_L1 >= LIGHT_RED_RED_1_DURATION) {
 				Light_State_L1 = GREEN;
 				Light_Time_L1 = 0;	
 			} 
@@ -52,6 +62,16 @@ void GState_Light_L1() {
 			LIGHT_AMBER_L1 = LIGHT_ON;
 			LIGHT_GREEN_L1 = LIGHT_OFF;
 			if(++Light_Time_L1 >= LIGHT_AMBER_DURATION) {
+				Light_State_L1 = RED_RED_2;
+				Light_Time_L1 = 0;	
+			} 
+			break;
+		}
+		case RED_RED_2: {
+			LIGHT_RED_L1 = LIGHT_ON;
+			LIGHT_AMBER_L1 = LIGHT_OFF;
+			LIGHT_GREEN_L1 = LIGHT_OFF;
+			if(++Light_Time_L1 >= LIGHT_RED_RED_2_DURATION) {
 				Light_State_L1 = RED;
 				Light_Time_L1 = 0;	
 			} 
@@ -78,6 +98,16 @@ void GState_Light_L2() {
 			LIGHT_AMBER_L2 = LIGHT_OFF;
 			LIGHT_GREEN_L2 = LIGHT_OFF;
 			if(++Light_Time_L2 >= LIGHT_RED_AMBER_DURATION) {
+				Light_State_L2 = RED_RED_1;
+				Light_Time_L2 = 0;	
+			} 
+			break;
+		}
+		case RED_RED_1: {
+			LIGHT_RED_L2 = LIGHT_ON;
+			LIGHT_AMBER_L2 = LIGHT_OFF;
+			LIGHT_GREEN_L2 = LIGHT_OFF;
+			if(++Light_Time_L2 >= LIGHT_RED_RED_1_DURATION) {
 				Light_State_L2 = GREEN;
 				Light_Time_L2 = 0;	
 			} 
@@ -98,6 +128,16 @@ void GState_Light_L2() {
 			LIGHT_AMBER_L2 = LIGHT_ON;
 			LIGHT_GREEN_L2 = LIGHT_OFF;
 			if(++Light_Time_L2 >= LIGHT_AMBER_DURATION) {
+				Light_State_L2 = RED_RED_2;
+				Light_Time_L2 = 0;	
+			} 
+			break;
+		}
+		case RED_RED_2: {
+			LIGHT_RED_L2 = LIGHT_ON;
+			LIGHT_AMBER_L2 = LIGHT_OFF;
+			LIGHT_GREEN_L2 = LIGHT_OFF;
+			if(++Light_Time_L2 >= LIGHT_RED_RED_2_DURATION) {
 				Light_State_L2 = RED;
 				Light_Time_L2 = 0;	
 			} 

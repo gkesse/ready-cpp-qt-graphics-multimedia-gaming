@@ -30,10 +30,13 @@ typedef unsigned long ulong;
 //===============================================
 #define LIGHT_OFF (1)
 #define LIGHT_ON (!LIGHT_OFF)
-#define LIGHT_GREEN_DURATION (30)
-#define LIGHT_AMBER_DURATION (20)
+#define LIGHT_GREEN_DURATION (3)
+#define LIGHT_AMBER_DURATION (2)
+#define LIGHT_RED_RED_DURATION (1)
 #define LIGHT_RED_DURATION (LIGHT_GREEN_DURATION)
 #define LIGHT_RED_AMBER_DURATION (LIGHT_AMBER_DURATION)
+#define LIGHT_RED_RED_1_DURATION (LIGHT_RED_RED_DURATION)
+#define LIGHT_RED_RED_2_DURATION (LIGHT_RED_RED_DURATION)
 //===============================================
 #endif
 //===============================================
