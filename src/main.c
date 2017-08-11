@@ -1,12 +1,12 @@
 //===============================================
-#include "GSch.h"
-#include "GStateMachine.h"
+#include "GSchHybrid.h"
+#include "GLed.h"
 //===============================================
 void main() {
 	GSch_Init();
-	GState_Init();
-	GSch_Add_Task(GState_Light_L1, 0, 1000);
-	GSch_Add_Task(GState_Light_L2, 1, 1000);
+	GLed_Init();
+	GSch_Add_Task(GLed_Short, 0, 1000, 1);
+	GSch_Add_Task(GLed_Long, 1, 20000, 0);
 	GSch_Start();
 	while(1) {
 		GSch_Dispatch_Tasks();
