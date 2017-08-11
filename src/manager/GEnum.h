@@ -1,13 +1,8 @@
 //===============================================
-#ifndef _GLed_
-#define _GLed_
+#ifndef _GEnum_
+#define _GEnum_
 //===============================================
-#include "GTypeDef.h"
-//===============================================
-void GLed_Init();
-void GLed_Flash();
-void GLed_Short();
-void GLed_Long();
+typedef data enum {RED, RED_AMBER, GREEN, AMBER} GLight;
 //===============================================
 #endif
 //===============================================

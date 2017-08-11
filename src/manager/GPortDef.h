@@ -2,9 +2,6 @@
 #ifndef _GPortDef_
 #define _GPortDef_
 //===============================================
-//#include <reg52.h>
-#include <at89s53.h>
-//===============================================
 #define PORT P1
 sbit PIN0 = PORT^0;
 sbit PIN1 = PORT^1;
@@ -29,6 +26,14 @@ sbit LED7 = LED^7;
 //===============================================
 #define WDOG P1
 sbit WDOG_PIN = WDOG^7;
+//===============================================
+#define LIGHT P1
+sbit LIGHT_RED_L1 = LIGHT^0;
+sbit LIGHT_AMBER_L1 = LIGHT^1;
+sbit LIGHT_GREEN_L1 = LIGHT^2;
+sbit LIGHT_RED_L2 = LIGHT^5;
+sbit LIGHT_AMBER_L2 = LIGHT^6;
+sbit LIGHT_GREEN_L2 = LIGHT^7;
 //===============================================
 #endif
 //===============================================

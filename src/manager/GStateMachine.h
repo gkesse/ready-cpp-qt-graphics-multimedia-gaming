@@ -1,13 +1,12 @@
 //===============================================
-#ifndef _GLed_
-#define _GLed_
+#ifndef _StateMachine_
+#define _StateMachine_
 //===============================================
 #include "GTypeDef.h"
 //===============================================
-void GLed_Init();
-void GLed_Flash();
-void GLed_Short();
-void GLed_Long();
+void GState_Init();
+void GState_Light_L1();
+void GState_Light_L2();
 //===============================================
 #endif
 //===============================================
