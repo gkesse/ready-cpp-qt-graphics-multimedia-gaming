@@ -20,6 +20,26 @@ sur plusieurs cibles de microcontrôleurs (8051, PIC) et de microprocesseurs (ARM
 C'est une bibliothèque développée en C et maintenu par 
 [Gerard KESSE](http://31.33.37.71:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
+# Ordonnanceur Hybride
+
+```
+//===============================================
+#include "GSchHybrid.h"
+#include "GLed.h"
+//===============================================
+void main() {
+	GSch_Init();
+	GLed_Init();
+	GSch_Add_Task(GLed_Short, 0, 1000, 0);
+	GSch_Add_Task(GLed_Long, 1, 20000, 0);
+	GSch_Start();
+	while(1) {
+		GSch_Dispatch_Tasks();
+	}
+}
+//===============================================
+```
+
 # Technologies
 
 Le développement de la bibliothèque **ReadyTTA** a nécessité les technologies suivantes :
