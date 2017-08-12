@@ -65,7 +65,12 @@ void GSch_Delete_Task(const uchar index) {
     Sch_Tasks_Map[index].runMe = 0;
 }
 //===============================================
-void GSch_Update() interrupt INTERRUPT_TIMER_2 {
+#ifdef GSDCC /* SDCC C Compiler	*/
+void GSch_Update() __interrupt(INTERRUPT_TIMER_T2) 
+#else /* Keil µVision C Compiler */
+void GSch_Update() interrupt INTERRUPT_TIMER_T2 
+#endif
+{
     uchar index;
     TF2 = 0;
     for(index = 0; index < SCH_MAX_TASKS; index++) {

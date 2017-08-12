@@ -1,12 +1,16 @@
 //===============================================
-#include "GUart.h"
+#include "GSch.h"
+#include "GStateMachine.h"
 //===============================================
 void main() {
-    GUart_Init(9600);
-	GUart_Str("Hello World!\n");
-	GUart_Str("Hello World!\n");
-	GUart_Str("Hello World!\n");
-	GUart_Str("Hello World!\n");
-    while(1);
-}
+    GSch_Init();
+    GState_Init();
+    GSch_Add_Task(GState_Light_L1, 0, 1000);
+    GSch_Add_Task(GState_Light_L2, 1, 1000);
+    GSch_Start();
+    while(1) {
+        GSch_Dispatch_Tasks();
+    }
+} 
 //===============================================
+   

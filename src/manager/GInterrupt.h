@@ -6,12 +6,15 @@
 //===============================================
 void GInterrupt_Start();
 //===============================================
-void GTimer0_Reload();
-void GTimer1_Reload();
+void GTimer_T0_Init();
+void GTimer_T1_Init();
+void GTimer_T2_Init();
 //===============================================
-void GTimer0_Init();
-void GTimer1_Init();
-void GTimer2_Init();
+#ifdef GSDCC /* SDCC C Compiler	*/
+void GInterrupt_Timer_T0() __interrupt(INTERRUPT_TIMER_T0); 
+void GInterrupt_Timer_T1() __interrupt(INTERRUPT_TIMER_T1); 
+void GInterrupt_Timer_T2() __interrupt(INTERRUPT_TIMER_T2); 
+#endif
 //===============================================
 #endif
 //===============================================

@@ -25,13 +25,13 @@ void GSeos_Go_To_Sleep() {
 }
 //===============================================
 #ifdef GSDCC /* SDCC C Compiler	*/
-void GSeos_Update() __interrupt(INTERRUPT_TIMER_2)	  
+void GSeos_Update() __interrupt(INTERRUPT_TIMER_T2)	  
 #else /* Keil µVision C Compiler	*/
-void GSeos_Update() interrupt INTERRUPT_TIMER_2 
+void GSeos_Update() interrupt INTERRUPT_TIMER_T2 
 #endif
 {    
     TF2 = 0;
-    LED = ~LED;
+    GLed_Time();
 }
 //===============================================
 

@@ -9,7 +9,7 @@ void GPort_Write_Data(uchar d) {
 void GPort_Write_Bit(uchar pin, bit d) {
     uchar m_pin = 1;
     m_pin <<= pin;
-    if(d == true) {
+    if(d == TRUE) {
         PORT |= m_pin;
         return;
     }
