@@ -23,86 +23,76 @@ C'est une bibliothèque développée en C et maintenu par
 # Système d'Exploitation Embarqué Simple
 
 ```
-//===============================================
 #include "GSeos.h"
 #include "GLed.h"
-//===============================================
+
 void main() {
-	GSeos_Init(50);
-	GLed_Init();
-	GSeos_Start();
-	while(1) {
-		GSeos_Go_To_Sleep();
-	}
+    GSeos_Init(50);
+    GLed_Init();
+    GSeos_Start();
+    while(1) {
+        GSeos_Go_To_Sleep();
+    }
 }
-//===============================================
 ```
 
 # Ordonnancement Coopératif
 
 ```
-//===============================================
 #include "GSch.h"
 #include "GStateMachine.h"
-//===============================================
+
 void main() {
-	GSch_Init();
-	GState_Init();
-	GSch_Add_Task(GState_Light_L1, 0, 1000);
-	GSch_Add_Task(GState_Light_L2, 1, 1000);
-	GSch_Start();
-	while(1) {
-		GSch_Dispatch_Tasks();
-	}
+    GSch_Init();
+    GState_Init();
+    GSch_Add_Task(GState_Light_L1, 0, 1000);
+    GSch_Add_Task(GState_Light_L2, 1, 1000);
+    GSch_Start();
+    while(1) {
+        GSch_Dispatch_Tasks();
+    }
 }
-//===============================================
 ```
 
 * **Structure d'une Tâche**
 
 ```
-//===============================================
 typedef data struct {
-	void (*pTask)();
-	uint delay;
-	uint period;
-	uchar runMe;
+    void (*pTask)();    // pointeur de tâche
+    uint delay;         // delai ou retard d'exécution
+    uint period;        // periode d'exécution
+    uchar runMe;        // drapeau d'exécution
 } GTask;
-//===============================================
 ```
 
 # Ordonnancement Hybride
 
 ```
-//===============================================
 #include "GSchHybrid.h"
 #include "GLed.h"
-//===============================================
+
 void main() {
-	GSch_Init();
-	GLed_Init();
-	GSch_Add_Task(GLed_Short, 0, 1000, 1); // tâche coopérative
-	GSch_Add_Task(GLed_Long, 1, 20000, 0); // tâche préemptive
-	GSch_Start();
-	while(1) {
-		GSch_Dispatch_Tasks();
-	}
+    GSch_Init();
+    GLed_Init();
+    GSch_Add_Task(GLed_Short, 0, 1000, 1); // tâche coopérative
+    GSch_Add_Task(GLed_Long, 1, 20000, 0); // tâche préemptive
+    GSch_Start();
+    while(1) {
+        GSch_Dispatch_Tasks();
+    }
 }
-//===============================================
 ```
 
 * **Structure d'une Tâche**
 
 ```
-//===============================================
 typedef data struct {
-	void (*pTask)();
-	uint delay;
-	uint period;
-	uchar runMe;
-    uchar coop;
+    void (*pTask)();    // pointeur de tâche
+    uint delay;         // delai ou retard d'exécution
+    uint period;        // periode d'exécution
+    uchar runMe;        // drapeau d'exécution
+    uchar coop;         // tâche coopérative/préemptive
 } GTask;
-//===============================================
 ```
 
 # Technologies

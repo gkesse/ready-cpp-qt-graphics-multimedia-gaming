@@ -5,10 +5,10 @@
 #include "GTypeDef.h"
 //===============================================
 typedef data struct {
-	void (*pTask)();
-	uint delay;
-	uint period;
-	uchar runMe;
+    void (*pTask)();
+    uint delay;
+    uint period;
+    uchar runMe;
 } GTask;
 //===============================================
 void GSch_Init();
