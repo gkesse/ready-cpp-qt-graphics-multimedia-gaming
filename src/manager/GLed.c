@@ -3,18 +3,8 @@
 #include "GPortDef.h"
 #include "GDelay.h"
 //===============================================
-#ifdef GSDCC /* SDCC C Compiler	*/
-//===============================================
-static __bit Flash_State;
-static __bit Led_Lock;
-//===============================================
-#else  /* Keil µVision C Compiler	*/
-//===============================================
-static bit Flash_State;
-static bit Led_Lock;
-//===============================================
-#endif
-//===============================================
+static GBit Flash_State;
+static GBit Led_Lock;
 static uint Led_Time;
 //===============================================
 void GLed_Init() {
