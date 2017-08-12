@@ -3,9 +3,9 @@
 #include "GLed.h"
 //===============================================
 void GSeos_Init(const uchar ms) {
-	uint m_PRELOAD01 = (65536 - ((OSC_FREQ * ms) / (OSC_PER_INST * 1000)));	// ms
-	uchar m_PRELOAD01H = (m_PRELOAD01 / 256);
-	uchar m_PRELOAD01L = (m_PRELOAD01 % 256);
+    uint m_PRELOAD01 = (65536 - ((OSC_FREQ * ms) / (OSC_PER_INST * 1000)));    // ms
+    uchar m_PRELOAD01H = (m_PRELOAD01 / 256);
+    uchar m_PRELOAD01L = (m_PRELOAD01 % 256);
     T2CON = 0x00; 
     TH2 = m_PRELOAD01H; 
     RCAP2H = m_PRELOAD01H; 
@@ -16,15 +16,15 @@ void GSeos_Init(const uchar ms) {
 }
 //===============================================
 void GSeos_Start() {
-	EA = 1;
+    EA = 1;
 }
 //===============================================
 void GSeos_Go_To_Sleep() {
-	PCON |= 0x01;
+    PCON |= 0x01;
 }
 //===============================================
 void GSeos_Update() interrupt INTERRUPT_TIMER_2 {
-	TF2 = 0;
-	GLed_Time();
+    TF2 = 0;
+    GLed_Time();
 }
 //===============================================

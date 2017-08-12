@@ -38,10 +38,10 @@ void GDelay_T1(uint ms) {
 }
 //===============================================
 void GDelay_ms(uint ms) {
-	uint m_msX;
-	uint m_msY;
-	for (m_msX = 0; m_msX < ms; m_msX++) {
-	    for (m_msY = 0; m_msY < 123; m_msY++);
-	}
+    uint m_msX;
+    uint m_msY;
+    for (m_msX = 0; m_msX < ms; m_msX++) {
+        for (m_msY = 0; m_msY < 123; m_msY++);
+    }
 }
 //===============================================

@@ -13,10 +13,10 @@ void GSch_Go_To_Sleep();
 void GSch_Delete_Task(const uchar index);
 //===============================================
 void GSch_Init() {
-	uchar index;
-	for(index = 0; index < SCH_MAX_TASKS; index++) {
-		GSch_Delete_Task(index);
-	}
+    uchar index;
+    for(index = 0; index < SCH_MAX_TASKS; index++) {
+        GSch_Delete_Task(index);
+    }
     T2CON = 0x00; 
     TH2 = PRELOAD01H; 
     RCAP2H = PRELOAD01H; 
@@ -27,69 +27,69 @@ void GSch_Init() {
 }
 //===============================================
 void GSch_Start() {
-	EA = 1;
+    EA = 1;
 }
 //===============================================
 void GSch_Go_To_Sleep() {
-	PCON |= 0x01;
+    PCON |= 0x01;
 }
 //===============================================
 void GSch_Dispatch_Tasks() {
-	uchar index;
-	for(index = 0; index < SCH_MAX_TASKS; index++) {
-		if((Sch_Tasks_Map[index].coop != 0) && (Sch_Tasks_Map[index].runMe > 0)) {
-			(*Sch_Tasks_Map[index].pTask)();
-			Sch_Tasks_Map[index].runMe -= 1;
-			if(Sch_Tasks_Map[index].period == 0) {
-				GSch_Delete_Task(index);
-			}
-		}
-	}
-	GSch_Go_To_Sleep();
+    uchar index;
+    for(index = 0; index < SCH_MAX_TASKS; index++) {
+        if((Sch_Tasks_Map[index].coop != 0) && (Sch_Tasks_Map[index].runMe > 0)) {
+            (*Sch_Tasks_Map[index].pTask)();
+            Sch_Tasks_Map[index].runMe -= 1;
+            if(Sch_Tasks_Map[index].period == 0) {
+                GSch_Delete_Task(index);
+            }
+        }
+    }
+    GSch_Go_To_Sleep();
 }
 //===============================================
 void GSch_Add_Task(void (*pTask)(), const uint delay, const uint period, const bit coop) {
-	uchar index = 0;
-	while((Sch_Tasks_Map[index].pTask != 0) && (index < SCH_MAX_TASKS)) index++;
-	if(index == SCH_MAX_TASKS) return;
-	Sch_Tasks_Map[index].pTask = pTask;
-	Sch_Tasks_Map[index].delay = delay;
-	Sch_Tasks_Map[index].period = period;
-	Sch_Tasks_Map[index].runMe = 0;
-	Sch_Tasks_Map[index].coop = coop;
+    uchar index = 0;
+    while((Sch_Tasks_Map[index].pTask != 0) && (index < SCH_MAX_TASKS)) index++;
+    if(index == SCH_MAX_TASKS) return;
+    Sch_Tasks_Map[index].pTask = pTask;
+    Sch_Tasks_Map[index].delay = delay;
+    Sch_Tasks_Map[index].period = period;
+    Sch_Tasks_Map[index].runMe = 0;
+    Sch_Tasks_Map[index].coop = coop;
 }
 //===============================================
 void GSch_Delete_Task(const uchar index) {
-	Sch_Tasks_Map[index].pTask = 0x0000;
-	Sch_Tasks_Map[index].delay = 0;
-	Sch_Tasks_Map[index].period = 0;
-	Sch_Tasks_Map[index].runMe = 0;
+    Sch_Tasks_Map[index].pTask = 0x0000;
+    Sch_Tasks_Map[index].delay = 0;
+    Sch_Tasks_Map[index].period = 0;
+    Sch_Tasks_Map[index].runMe = 0;
 }
 //===============================================
 void GSch_Update() interrupt INTERRUPT_TIMER_2 {
-	uchar index;
-	TF2 = 0;
-	for(index = 0; index < SCH_MAX_TASKS; index++) {
-		if(Sch_Tasks_Map[index].pTask != 0) {
-			if(Sch_Tasks_Map[index].delay == 0) {
-				if(Sch_Tasks_Map[index].coop != 0) {
-					Sch_Tasks_Map[index].runMe += 1;
-				}
-				else {
-					(*Sch_Tasks_Map[index].pTask)();
-					Sch_Tasks_Map[index].runMe -= 1;
-					if(Sch_Tasks_Map[index].period == 0) {
-						GSch_Delete_Task(index);
-					}
-				}
-				if(Sch_Tasks_Map[index].period != 0) {
-					Sch_Tasks_Map[index].delay = Sch_Tasks_Map[index].period;
-				}
-			}
-			else {
-				Sch_Tasks_Map[index].delay -= 1;
-			}
-		}
-	}
+    uchar index;
+    TF2 = 0;
+    for(index = 0; index < SCH_MAX_TASKS; index++) {
+        if(Sch_Tasks_Map[index].pTask != 0) {
+            if(Sch_Tasks_Map[index].delay == 0) {
+                if(Sch_Tasks_Map[index].coop != 0) {
+                    Sch_Tasks_Map[index].runMe += 1;
+                }
+                else {
+                    (*Sch_Tasks_Map[index].pTask)();
+                    Sch_Tasks_Map[index].runMe -= 1;
+                    if(Sch_Tasks_Map[index].period == 0) {
+                        GSch_Delete_Task(index);
+                    }
+                }
+                if(Sch_Tasks_Map[index].period != 0) {
+                    Sch_Tasks_Map[index].delay = Sch_Tasks_Map[index].period;
+                }
+            }
+            else {
+                Sch_Tasks_Map[index].delay -= 1;
+            }
+        }
+    }
 }
 //===============================================

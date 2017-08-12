@@ -7,7 +7,7 @@
 #define PRELOAD01L (PRELOAD01 % 256)
 //===============================================
 void GInterrupt_Start() {
-	EA = 1;
+    EA = 1;
 }
 //===============================================
 void GTimer0_Reload() {
@@ -25,17 +25,17 @@ void GTimer1_Reload() {
 }
 //===============================================
 void GTimer0_Init() {
-	TMOD &= 0xF0;
+    TMOD &= 0xF0;
     TMOD |= 0x01;
-	GTimer0_Reload();
-	ET0 = 1; 
+    GTimer0_Reload();
+    ET0 = 1; 
 }
 //===============================================
 void GTimer1_Init() {
-	TMOD &= 0x0F;
+    TMOD &= 0x0F;
     TMOD |= 0x10;
-	GTimer1_Reload();
-	ET1 = 1; 
+    GTimer1_Reload();
+    ET1 = 1; 
 }
 //===============================================
 void GTimer2_Init() {
@@ -49,17 +49,17 @@ void GTimer2_Init() {
 }
 //===============================================
 void GInterrupt_Timer_0() interrupt INTERRUPT_TIMER_0 {
-	GTimer0_Reload();
-	GLed_Flash();
+    GTimer0_Reload();
+    GLed_Flash();
 }
 //===============================================
 void GInterrupt_Timer_1() interrupt INTERRUPT_TIMER_1 {
-	GTimer1_Reload();
-	GLed_Flash();
+    GTimer1_Reload();
+    GLed_Flash();
 }
 //===============================================
 void GInterrupt_Timer_2() interrupt INTERRUPT_TIMER_2 {
-	TF2 = 0;
-	GLed_Flash();
+    TF2 = 0;
+    GLed_Flash();
 }
 //===============================================
