@@ -1,6 +1,7 @@
 //===============================================
 #include "GSeos.h"
 #include "GLed.h"
+#include "GPortDef.h"
 //===============================================
 void GSeos_Init(const uchar ms) {
     uint m_PRELOAD01 = (65536 - ((OSC_FREQ * ms) / (OSC_PER_INST * 1000)));    // ms
@@ -23,8 +24,14 @@ void GSeos_Go_To_Sleep() {
     PCON |= 0x01;
 }
 //===============================================
-void GSeos_Update() interrupt INTERRUPT_TIMER_2 {
+#ifdef GSDCC /* SDCC C Compiler	*/
+void GSeos_Update() __interrupt(INTERRUPT_TIMER_2)	  
+#else /* Keil µVision C Compiler	*/
+void GSeos_Update() interrupt INTERRUPT_TIMER_2 
+#endif
+{    
     TF2 = 0;
-    GLed_Time();
+    LED = ~LED;
 }
 //===============================================
+

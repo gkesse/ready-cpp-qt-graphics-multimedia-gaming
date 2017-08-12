@@ -6,6 +6,7 @@
 //===============================================
 void GDelay_T0(uint ms);
 void GDelay_T1(uint ms);
+void GDelay_T2(uint ms);
 void GDelay_ms(uint ms);
 //===============================================
 #endif

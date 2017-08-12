@@ -2,12 +2,23 @@
 #ifndef _GTypeDef_
 #define _GTypeDef_
 //===============================================
-//#include <reg52.h>
+#ifdef GSDCC /* SDCC C Compiler	*/
+//===============================================
+#include <at89s53.h>
+//===============================================
+typedef volatile unsigned char uchar;
+typedef volatile unsigned int uint;
+typedef volatile unsigned long ulong;
+//===============================================
+#else /* Keil µVision C Compiler */
+//===============================================
 #include <at89s53.h>
 //===============================================
 typedef unsigned char uchar;
 typedef unsigned int uint;
 typedef unsigned long ulong;
+//===============================================
+ #endif
 //===============================================
 #define OSC_FREQ (11059200)
 #define OSC_PER_INST (12)

@@ -37,6 +37,23 @@ void GDelay_T1(uint ms) {
     }
 }
 //===============================================
+void GDelay_T2(uint ms) {
+    uint m_ms;
+    T2CON = 0x00; 
+    ET2 = 0;
+
+    for(m_ms = 0; m_ms < ms; m_ms++) {
+        TH2 = PRELOAD01H;
+        RCAP2H = PRELOAD01H;
+        TL2 = PRELOAD01L;
+        RCAP2L = PRELOAD01L;
+        TF2 = 0; 
+        TR2 = 1; 
+        while(TF2 == 0);
+        TR2 = 0; 
+    }
+}
+//===============================================
 void GDelay_ms(uint ms) {
     uint m_msX;
     uint m_msY;

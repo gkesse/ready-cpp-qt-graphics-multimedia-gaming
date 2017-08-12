@@ -2,6 +2,23 @@
 #ifndef _GPortDef_
 #define _GPortDef_
 //===============================================
+#ifdef GSDCC /* SDCC C Compiler	*/
+//===============================================
+#define PORT P1
+#define PIN0 P1_0
+//===============================================
+#define LED P1
+#define LED0 P1_0
+#define LED1 P1_1
+#define LED2 P1_2
+#define LED3 P1_3
+#define LED4 P1_4
+#define LED5 P1_5
+#define LED6 P1_6
+#define LED7 P1_7
+//===============================================
+#else /* Keil µVision C Compiler */
+//===============================================
 #define PORT P1
 sbit PIN0 = PORT^0;
 sbit PIN1 = PORT^1;
@@ -34,6 +51,8 @@ sbit LIGHT_GREEN_L1 = LIGHT^2;
 sbit LIGHT_RED_L2 = LIGHT^5;
 sbit LIGHT_AMBER_L2 = LIGHT^6;
 sbit LIGHT_GREEN_L2 = LIGHT^7;
+//===============================================
+#endif
 //===============================================
 #endif
 //===============================================

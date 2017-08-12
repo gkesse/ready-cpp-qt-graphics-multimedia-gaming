@@ -3,8 +3,18 @@
 #include "GPortDef.h"
 #include "GDelay.h"
 //===============================================
+#ifdef GSDCC /* SDCC C Compiler	*/
+//===============================================
+static __bit Flash_State;
+static __bit Led_Lock;
+//===============================================
+#else  /* Keil µVision C Compiler	*/
+//===============================================
 static bit Flash_State;
 static bit Led_Lock;
+//===============================================
+#endif
+//===============================================
 static uint Led_Time;
 //===============================================
 void GLed_Init() {
@@ -15,12 +25,12 @@ void GLed_Init() {
 //===============================================
 void GLed_Flash() {
     if(Flash_State == LED_OFF) {
-          Flash_State = LED_ON;
+        Flash_State = LED_ON;
         LED7 = LED_ON;
 
     }
     else if(Flash_State == LED_ON) {
-           Flash_State = LED_OFF;
+        Flash_State = LED_OFF;
         LED7 = LED_OFF;
     }
 }
@@ -29,12 +39,12 @@ void GLed_Time() {
     if(++Led_Time < 20) return;
     Led_Time = 0;
     if(Flash_State == LED_OFF) {
-          Flash_State = LED_ON;
+        Flash_State = LED_ON;
         LED7 = LED_ON;
 
     }
     else if(Flash_State == LED_ON) {
-           Flash_State = LED_OFF;
+        Flash_State = LED_OFF;
         LED7 = LED_OFF;
     }
 }
@@ -44,13 +54,13 @@ void GLed_Short() {
     Led_Lock = LOCKED;
 
     if(Flash_State == LED_OFF) {
-          Flash_State = LED_ON;
+        Flash_State = LED_ON;
         LED0 = LED_ON;
         LED7 = LED_ON;
 
     }
     else if(Flash_State == LED_ON) {
-           Flash_State = LED_OFF;
+        Flash_State = LED_OFF;
         LED0 = LED_OFF;
         LED7 = LED_OFF;
     }

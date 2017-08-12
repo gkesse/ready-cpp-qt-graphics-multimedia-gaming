@@ -1,13 +1,12 @@
 //===============================================
-#include "GSeos.h"
-#include "GLed.h"
+#include "GUart.h"
 //===============================================
 void main() {
-    GSeos_Init(50);
-    GLed_Init();
-    GSeos_Start();
-    while(1) {
-        GSeos_Go_To_Sleep();
-    }
+    GUart_Init(9600);
+	GUart_Str("Hello World!\n");
+	GUart_Str("Hello World!\n");
+	GUart_Str("Hello World!\n");
+	GUart_Str("Hello World!\n");
+    while(1);
 }
 //===============================================
