@@ -3,11 +3,11 @@
 #include "GLed.h"
 //===============================================
 void main() {
-	GSeos_Init(50);
-	GLed_Init();
-	GSeos_Start();
-	while(1) {
-		GSeos_Go_To_Sleep();
-	}
+    GSeos_Init(50);
+    GLed_Init();
+    GSeos_Start();
+    while(1) {
+        GSeos_Go_To_Sleep();
+    }
 }
 //===============================================
