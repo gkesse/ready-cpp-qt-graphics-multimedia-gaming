@@ -1,14 +1,12 @@
 //===============================================
-#ifndef _GLed_
-#define _GLed_
+#ifndef _GSeos_
+#define _GSeos_
 //===============================================
 #include "GTypeDef.h"
 //===============================================
-void GLed_Init();
-void GLed_Flash();
-void GLed_Time();
-void GLed_Short();
-void GLed_Long();
+void GSeos_Init(const uchar ms);
+void GSeos_Start();
+void GSeos_Go_To_Sleep();
 //===============================================
 #endif
 //===============================================

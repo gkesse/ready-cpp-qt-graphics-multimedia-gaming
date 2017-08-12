@@ -20,6 +20,24 @@ sur plusieurs cibles de microcontrôleurs (8051, PIC) et de microprocesseurs (ARM
 C'est une bibliothèque développée en C et maintenu par 
 [Gerard KESSE](http://31.33.37.71:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
+# Système d'Exploitation Embarqué Simple
+
+```
+//===============================================
+#include "GSeos.h"
+#include "GLed.h"
+//===============================================
+void main() {
+	GSeos_Init(50);
+	GLed_Init();
+	GSeos_Start();
+	while(1) {
+		GSeos_Go_To_Sleep();
+	}
+}
+//===============================================
+```
+
 # Ordonnancement Coopératif
 
 ```
@@ -40,6 +58,19 @@ void main() {
 //===============================================
 ```
 
+* **Structure d'une Tâche**
+
+```
+//===============================================
+typedef data struct {
+	void (*pTask)();
+	uint delay;
+	uint period;
+	uchar runMe;
+} GTask;
+//===============================================
+```
+
 # Ordonnancement Hybride
 
 ```
@@ -57,6 +88,20 @@ void main() {
 		GSch_Dispatch_Tasks();
 	}
 }
+//===============================================
+```
+
+* **Structure d'une Tâche**
+
+```
+//===============================================
+typedef data struct {
+	void (*pTask)();
+	uint delay;
+	uint period;
+	uchar runMe;
+    uchar coop;
+} GTask;
 //===============================================
 ```
 

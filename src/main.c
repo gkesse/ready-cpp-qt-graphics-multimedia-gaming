@@ -1,15 +1,13 @@
 //===============================================
-#include "GSchHybrid.h"
+#include "GSeos.h"
 #include "GLed.h"
 //===============================================
 void main() {
-	GSch_Init();
+	GSeos_Init(50);
 	GLed_Init();
-	GSch_Add_Task(GLed_Short, 0, 1000, 1);
-	GSch_Add_Task(GLed_Long, 1, 20000, 0);
-	GSch_Start();
+	GSeos_Start();
 	while(1) {
-		GSch_Dispatch_Tasks();
+		GSeos_Go_To_Sleep();
 	}
 }
 //===============================================

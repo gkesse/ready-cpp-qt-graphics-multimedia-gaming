@@ -5,13 +5,29 @@
 //===============================================
 static bit Flash_State;
 static bit Led_Lock;
+static uint Led_Time;
 //===============================================
 void GLed_Init() {
 	Flash_State = LED_OFF;
 	Led_Lock = UNLOCKED;
+	Led_Time = 0;
 }
 //===============================================
 void GLed_Flash() {
+	if(Flash_State == LED_OFF) {
+	  	Flash_State = LED_ON;
+		LED7 = LED_ON;
+
+	}
+	else if(Flash_State == LED_ON) {
+	   	Flash_State = LED_OFF;
+		LED7 = LED_OFF;
+	}
+}
+//===============================================
+void GLed_Time() {
+	if(++Led_Time < 20) return;
+	Led_Time = 0;
 	if(Flash_State == LED_OFF) {
 	  	Flash_State = LED_ON;
 		LED7 = LED_ON;
