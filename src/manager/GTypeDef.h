@@ -8,6 +8,12 @@ typedef unsigned char uchar;
 typedef unsigned int uint;
 typedef unsigned long ulong;
 //===============================================
+#ifdef GSDCC /* SDCC C Compiler	*/
+typedef __bit GBit; 
+#else /* Keil µVision C Compiler */
+typedef bit GBit; 
+#endif
+//===============================================
 #define OSC_FREQ (11059200)
 #define OSC_PER_INST (12)
 //===============================================

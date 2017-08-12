@@ -17,6 +17,14 @@
 #define LED6 P1_6
 #define LED7 P1_7
 //===============================================
+#define LIGHT P1
+#define LIGHT_RED_L1 	P1_0
+#define LIGHT_AMBER_L1 	P1_1
+#define LIGHT_GREEN_L1 	P1_2
+#define LIGHT_RED_L2 	P1_5
+#define LIGHT_AMBER_L2 	P1_6
+#define LIGHT_GREEN_L2 	P1_7
+//===============================================
 #else /* Keil µVision C Compiler */
 //===============================================
 #define PORT P1

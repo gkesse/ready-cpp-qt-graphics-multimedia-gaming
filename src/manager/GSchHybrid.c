@@ -48,7 +48,7 @@ void GSch_Dispatch_Tasks() {
     GSch_Go_To_Sleep();
 }
 //===============================================
-void GSch_Add_Task(void (*pTask)(), const uint delay, const uint period, const bit coop) {
+void GSch_Add_Task(void (*pTask)(), const uint delay, const uint period, const GBit coop) {
     uchar index = 0;
     while((Sch_Tasks_Map[index].pTask != 0) && (index < SCH_MAX_TASKS)) index++;
     if(index == SCH_MAX_TASKS) return;
@@ -66,7 +66,12 @@ void GSch_Delete_Task(const uchar index) {
     Sch_Tasks_Map[index].runMe = 0;
 }
 //===============================================
-void GSch_Update() interrupt INTERRUPT_TIMER_2 {
+#ifdef GSDCC /* SDCC C Compiler	*/
+void GSch_Update() __interrupt(INTERRUPT_TIMER_T2) 
+#else /* Keil µVision C Compiler */
+void GSch_Update() interrupt INTERRUPT_TIMER_T2 
+#endif
+{
     uchar index;
     TF2 = 0;
     for(index = 0; index < SCH_MAX_TASKS; index++) {

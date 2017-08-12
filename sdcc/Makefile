@@ -4,13 +4,14 @@ GDEFS =\
     -DGSDCC
 
 GFLAGS =\
---std-c89 \
---std-c99 \
+#--std-c89 \
+#--std-c99 \
 
 GOBJS =\
     main.rel \
-    GSch.rel \
-    GStateMachine.rel \
+    GSchHybrid.rel \
+    GLed.rel \
+    GDelay.rel \
 
 all: $(GOBJS)
 	sdcc $(GOBJS) $(GFLAGS)
@@ -19,6 +20,8 @@ main.rel: $(GPATH)/main.c
 	sdcc -c $(GPATH)/main.c $(GDEFS) $(GFLAGS)
 GSch.rel: $(GPATH)/manager/GSch.c
 	sdcc -c $(GPATH)/manager/GSch.c $(GDEFS) $(GFLAGS)
+GSchHybrid.rel: $(GPATH)/manager/GSchHybrid.c
+	sdcc -c $(GPATH)/manager/GSchHybrid.c $(GDEFS) $(GFLAGS)
 GSeos.rel: $(GPATH)/manager/GSeos.c
 	sdcc -c $(GPATH)/manager/GSeos.c $(GDEFS) $(GFLAGS)
 GInterrupt.rel: $(GPATH)/manager/GInterrupt.c

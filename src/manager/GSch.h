@@ -4,7 +4,7 @@
 //===============================================
 #include "GTypeDef.h"
 //===============================================
-typedef __data struct {
+typedef struct {
     void (*pTask)();
     uint delay;
     uint period;
