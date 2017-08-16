@@ -7,6 +7,9 @@ GFLAGS =\
 #--std-c89 \
 #--std-c99 \
 
+GLIBS =\
+#-LMY_LIB \
+
 GOBJS =\
     main.rel \
     GSchHybrid.rel \
@@ -14,7 +17,7 @@ GOBJS =\
     GDelay.rel \
 
 all: $(GOBJS)
-	sdcc $(GOBJS) $(GFLAGS)
+	sdcc $(GOBJS) $(GFLAGS) $(GLIBS)
 	packihx main.ihx > GProject.hex 
 main.rel: $(GPATH)/main.c
 	sdcc -c $(GPATH)/main.c $(GDEFS) $(GFLAGS)
