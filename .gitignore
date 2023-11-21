@@ -1,33 +1,6 @@
 #================================================
-# Keil µVision
+# gitignore
 #================================================
 
-keil/*lst
-keil/*obj
-keil/*M51
-keil/*plg
-keil/*lnp
-keil/*Bak
-keil/*Opt
-keil/GProject
 
 #================================================
-# SDCC C Compiler
-#================================================
-
-sdcc/*rel 
-sdcc/*lst 
-sdcc/*rst 
-sdcc/*ihx 
-sdcc/*asm 
-sdcc/*sym 
-sdcc/*lk 
-sdcc/*map 
-sdcc/*mem
-
-#================================================
-# Proteus
-#================================================
-
-proteus/*pdsbak
-proteus/*workspace
