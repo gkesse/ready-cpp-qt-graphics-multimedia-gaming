@@ -1,0 +1,62 @@
+<RCC>
+    <qresource prefix="/img">
+        <file alias="Warp.png">data/img/Warp.png</file>
+        <file alias="background.png">data/img/background.png</file>
+        <file alias="bomb.png">data/img/bomb.png</file>
+        <file alias="brick3.png">data/img/brick3.png</file>
+        <file alias="c2.png">data/img/c2.png</file>
+        <file alias="clock.png">data/img/clock.png</file>
+        <file alias="coin.png">data/img/coin.png</file>
+        <file alias="conveyorR.png">data/img/conveyorR.png</file>
+        <file alias="count.png">data/img/count.png</file>
+        <file alias="gameover.png">data/img/gameover.png</file>
+        <file alias="gameovers.png">data/img/gameovers.png</file>
+        <file alias="goomba.png">data/img/goomba.png</file>
+        <file alias="goombas.png">data/img/goombas.png</file>
+        <file alias="ground.png">data/img/ground.png</file>
+        <file alias="icon.ico">data/img/icon.ico</file>
+        <file alias="logo.png">data/img/logo.png</file>
+        <file alias="mariosplash.png">data/img/mariosplash.png</file>
+        <file alias="mflag.png">data/img/mflag.png</file>
+        <file alias="notebox.png">data/img/notebox.png</file>
+        <file alias="piranha.png">data/img/piranha.png</file>
+        <file alias="questbox.png">data/img/questbox.png</file>
+        <file alias="redt.png">data/img/redt.png</file>
+        <file alias="scene.png">data/img/scene.png</file>
+        <file alias="scoretext.png">data/img/scoretext.png</file>
+        <file alias="shrink.png">data/img/shrink.png</file>
+        <file alias="sign.png">data/img/sign.png</file>
+        <file alias="sky.png">data/img/sky.png</file>
+        <file alias="smallMarioStop.png">data/img/smallMarioStop.png</file>
+        <file alias="spiny.png">data/img/spiny.png</file>
+        <file alias="stairblock.png">data/img/stairblock.png</file>
+        <file alias="title.png">data/img/title.png</file>
+        <file alias="turtle.png">data/img/turtle.png</file>
+        <file alias="ustretch.png">data/img/ustretch.png</file>
+        <file alias="wallf2.png">data/img/wallf2.png</file>
+        <file alias="wallg.png">data/img/wallg.png</file>
+        <file alias="walli.png">data/img/walli.png</file>
+        <file alias="wallplatform.png">data/img/wallplatform.png</file>
+    </qresource>
+    <qresource prefix="/audio">
+        <file alias="Select.wav">data/audio/Select.wav</file>
+        <file alias="ThemeSong.mp3">data/audio/ThemeSong.mp3</file>
+        <file alias="coin.wav">data/audio/coin.wav</file>
+        <file alias="death.wav">data/audio/death.wav</file>
+        <file alias="fireball.wav">data/audio/fireball.wav</file>
+        <file alias="fsprout.wav">data/audio/fsprout.wav</file>
+        <file alias="ghost.wav">data/audio/ghost.wav</file>
+        <file alias="hitwarptube.wav">data/audio/hitwarptube.wav</file>
+        <file alias="jump.wav">data/audio/jump.wav</file>
+        <file alias="kick.wav">data/audio/kick.wav</file>
+        <file alias="level1.mp3">data/audio/level1.mp3</file>
+        <file alias="levelclear.wav">data/audio/levelclear.wav</file>
+        <file alias="powerup.wav">data/audio/powerup.wav</file>
+        <file alias="shrink.wav">data/audio/shrink.wav</file>
+        <file alias="sprout.wav">data/audio/sprout.wav</file>
+    </qresource>
+    <qresource prefix="/font">
+        <file alias="CoinCount2.ttf">data/font/CoinCount2.ttf</file>
+        <file alias="SuperMario256.ttf">data/font/SuperMario256.ttf</file>
+    </qresource>
+</RCC>
