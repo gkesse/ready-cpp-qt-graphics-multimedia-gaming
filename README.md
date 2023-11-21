@@ -4,7 +4,7 @@ Développement d'un jeu de Super Mario Bros en C++ - Qt – Graphics - Multiméd
 
 # Ecran de démarrage (Splashscreen)
 
-![splash.gif](./img/splash.gif "splash.gif")
+![splash.png](./img/splash.png "splash.png")
 
 # Scène d'accueil
 
