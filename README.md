@@ -1,6 +1,6 @@
 # Introduction
 
-Développement d'un jeu de Super Mario Bros en C++ - Qt – Graphics - Multimédia.
+Développement d'une application de jeu de Super Mario Bros en C++ - Qt – Graphics - Multimédia.
 
 # Ecran de démarrage (Splashscreen)
 
